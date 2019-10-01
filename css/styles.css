@@ -69,7 +69,7 @@ body{
   margin: 0;
     max-width: 100%;
     display: grid;
-    grid-template-columns:  auto 1fr;
+    grid-template-columns:  auto auto;
     grid-template-rows: auto 1fr 1fr 1fr ;
     grid-template-areas: "header header"
                          "navbar series"
@@ -200,7 +200,8 @@ body{
 }
 
 .settings{
-  margin-top: 350px;
+  margin-top: 250px;
+  
 }
 .series {
     /* background: red; */
@@ -212,15 +213,17 @@ body{
 
 .series-container{
   display: grid;
+  row-gap: 30px;
   align-items: center;
   margin: 0;
+  margin-top: 30px;
   /* justify-content: space-around; */
 }
 .series-container h2 {
   margin: 0 30px;
 }
 .items-box {
-  max-width: 100%;
+
   height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -231,15 +234,58 @@ body{
 }
 
 .thumbnails{
-  border: 1px solid red;
+  position: relative;
+  /* border: 1px solid red; */
   max-width: 300px;
-  height: 150px;
+  height: auto;
   box-shadow: 0px 3px 16px 0px rgba(130,128,130,1);
+  object-fit: cover;
+}
+.thumbnails img{
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+.thumbnail.image{
+  position: relative;
+}
+.thumbnail-overlay {
+  background: rgba(0, 0, 0, .4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.thumbnail-overlay p{
+  margin: 0;
+  
+}
+.thumbnail-overlay span{
+  margin: 0l
+  font-size: 12px;
+  
+}
+
+
+.thumbnails:hover .thumbnail-overlay{
+  display: block;
 }
 
 .robot {
   max-width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 
